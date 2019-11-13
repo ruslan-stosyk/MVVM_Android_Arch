@@ -2,4 +2,9 @@
     <string name="app_name">BLE</string>
     <string name="promotion_special_label">Tessssssssst</string>
     <string name="connect">Connect</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_question">What is your name?</string>
+    <string name="welcome_btn">Welcome Me</string>
 </resources>

@@ -10,6 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
  */
 
 @BindingAdapter(value = ["app:adapter"])
-fun setAdapter(recyclerView: RecyclerView, adapter: DeviceAdapter) {
-    recyclerView.adapter = adapter
+fun setAdapter(recyclerView: RecyclerView, adapter: DeviceAdapter?) {
+    adapter?.let { recyclerView.adapter = it }
 }
