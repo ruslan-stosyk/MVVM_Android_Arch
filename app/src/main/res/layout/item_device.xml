@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="device"
+            type="com.indeema.ble.data.Device" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/item_device_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{device.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_device_uuid"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="spread"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/item_device_uuid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{device.uuid.toString()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_device_open_btn"
+            app:layout_constraintStart_toEndOf="@id/item_device_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="spread"
+            tools:text="@tools:sample/lorem/random" />
+
+        <Button
+            android:id="@+id/item_device_open_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/connect"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="wrap" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
