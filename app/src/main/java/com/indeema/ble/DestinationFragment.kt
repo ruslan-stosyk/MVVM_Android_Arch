@@ -19,7 +19,7 @@ class DestinationFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         name =
-            if (arguments != null) DestinationFragmentArgs.fromBundle(arguments!!).nameToShow else ""
+            if (arguments != null) DestinationFragmentArgs.fromBundle(arguments!!).name else ""
     }
 
     override fun onCreateView(
@@ -36,16 +36,16 @@ class DestinationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val r = Reread()
-        r.execute()
+        r.execute(name)
     }
-
 
     inner class Reread : AsyncTask<String, Void, DeviceAdapter>() {
         override fun doInBackground(vararg p0: String?): DeviceAdapter {
+            val name = p0[0]
             val deviceList: ArrayList<Device> = ArrayList()
 
             for (i in 1 until 100_000 step 2)
-                deviceList.add(Device(UUID.randomUUID(), i.run { "${p0[0]} is $i " }.toString()))
+                deviceList.add(Device(UUID.randomUUID(), i.run { "$name is $i " }.toString()))
             return DeviceAdapter(deviceList)
         }
 

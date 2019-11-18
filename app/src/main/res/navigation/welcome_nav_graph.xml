@@ -5,14 +5,15 @@
     android:id="@+id/welcome_nav_graph"
     app:startDestination="@id/mainFragment">
 
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.indeema.ble.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/toDestination"
-            app:destination="@id/destinationFragment" />
+            android:id="@+id/action_mainFragment_to_destinationFragment"
+            app:destination="@+id/destinationFragment" />
     </fragment>
 
     <fragment
@@ -21,10 +22,9 @@
         android:label="fragment_destination"
         tools:layout="@layout/fragment_destination">
         <argument
-            android:name="nameToShow"
-            android:defaultValue="Andy"
+            android:name="name"
+            android:defaultValue="Test"
             app:argType="string" />
+
     </fragment>
-
-
 </navigation>
